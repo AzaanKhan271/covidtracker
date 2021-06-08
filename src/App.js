@@ -1,25 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import Logo from './assets/greencorona.png'
+import Cards from "./components/Cards/Cards";
+import CountryPicker from "./components/countryPicker/CountryPicker";
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+    <div >
+      <div className='mainHeadDiv'>
+        <div className='imgDiv'>
+<img src={Logo} className='imgLogo' />
+
+        </div>
+        <p><b>Global and Country Wise Cases of Corona Virus</b></p>
+        <p><i>(For a Particlar select a Country from below)</i></p>
+      </div>
+      </div>
+      <Cards />
+      {/* <CountryPicker /> */}
+    </>
   );
-}
+};
 
 export default App;
