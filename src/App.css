@@ -1,10 +1,18 @@
-.backImg{
-  /* background-image: url(/src/assets/covid19_lg.jpg) ;
-  background-repeat: no-repeat;
-  background-size: cover;
-  opacity: 0.8;
-  width: 100%; */
-}
+/* .backImg{
+ 
+
+    background-image:url(/src/assets/back5.png);
+    opacity: 1;;
+    position:absolute;
+    top:0;
+    bottom:0;
+    right:0;
+    left:0;
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index:-1;
+} */
+
 
 .imgDiv{
   display: flex;
@@ -16,11 +24,15 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  padding-top: 7%;
 }
 .imgLogo{
-  width: 15%;
-  height: 15%;
+  width: 80%;
+  /* height: 15%; */ 
 }
 body{
   background-color: #efefef;
+  margin-top:10px;
+   /* background-image: url(/src/assets/covid19_lg.jpg) ; */
+   
 }

@@ -75,6 +75,7 @@ const fetchCountries = async () => {
 const CountryPicker = ({ handleCountryChange }) => {
   const [fetchedCountries, setFetchedCountries] = useState([]);
   useEffect(() => {
+    debugger
     const fetchAPI = async () => {
       setFetchedCountries(await fetchCountries());
     };
