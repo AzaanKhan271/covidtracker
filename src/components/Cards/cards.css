@@ -61,3 +61,9 @@
   .columnFacts:hover {
     top: -10px;
   }
+  .pickerDiv{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }

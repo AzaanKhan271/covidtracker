@@ -36,10 +36,12 @@ const Cards = () => {
    const [deaths,setDeaths]=useState(null)
    const [last,setLast]=useState(null)
    const [country,setCountry]=useState(null)
+   const active = infected - recovered - deaths;
    const handleChange = (e) =>{
 let val= e.target.value
 
 setCountry(val)
+
    }
    useEffect(()=>{
     fetchData()
@@ -59,25 +61,24 @@ setCountry(val)
 // }
 // fetchCountries()
 // const [countries,setCountries]=useState(null)
-
- const fetchCountries = async () => {
-    try {
-      const {
-        data: { countries },
-      } = await axios.get(`${url}/countries`);
-      return countries.map((country) => country.name);
-    } catch (error) {
-      console.log(error);
-    }
-  };
-  const CountryPicker = ({ handleCountryChange }) => {
-    const [fetchedCountries, setFetchedCountries] = useState([]);
-    useEffect(() => {
-      const fetchAPI = async () => {
-        setFetchedCountries(await fetchCountries());
-      };
-      fetchAPI();
-    }, [setFetchedCountries]);
+const fetchCountries = async () => {
+  try {
+    const {
+      data: { countries },
+    } = await axios.get(`${url}/countries`);
+    return countries.map((country) => country.name);
+  } catch (error) {
+    console.log(error);
+  }
+};
+const CountryPicker = ({ handleCountryChange }) => {
+  const [fetchedCountries, setFetchedCountries] = useState([]);
+  useEffect(() => {
+    const fetchAPI = async () => {
+      setFetchedCountries(await fetchCountries());
+    };
+    fetchAPI();
+  }, [setFetchedCountries]);
   
     return (
       <FormControl
@@ -99,17 +100,23 @@ setCountry(val)
   };
     return(
         <>
+             <div className='pickerDiv'>
+    {/* <input type='text' onChange={handleChange}/> */}
+    <CountryPicker/>
+    <h1>{country}</h1>
+    </div>
+    
           <div className='row' style={{marginLeft:'0%'}}>
 
-
+    
 
 <div className='columnFacts' style={{ justifyContent: 'center' }}
 
 >
     <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column',marginBottom:'5%' ,marginTop:'5%' }}>
 
-        <br></br>
-        <h4 style={{ fontSize: '16px', color: '#f5f5f5' }}>{infected}</h4>
+        <h3>Confirmed</h3>
+        <h1 style={{ fontSize: '45px', color: '#f5f5f5' }}>{infected}</h1>
         <span className='spanNum'>{new Date(last).toDateString()}</span>
         <span className='spanNum'>{new Date(last).toLocaleTimeString()}</span>
 
@@ -125,9 +132,10 @@ setCountry(val)
 
     >
     <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column',marginBottom:'5%' ,marginTop:'5%' }}>
-       <br></br>
+    <h1>Recovered</h1> <br></br>
         <h4 style={{ fontSize: '16px', color: '#f5f5f5' }}>{recovered}</h4>
-        <span className='spanNum'>4708</span>
+        <span className='spanNum'>{new Date(last).toDateString()}</span>
+        <span className='spanNum'>{new Date(last).toLocaleTimeString()}</span>
 
 
     </div>
@@ -137,9 +145,10 @@ setCountry(val)
 
     >
     <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column',marginBottom:'5%' ,marginTop:'5%'}}>
-        <br></br>
+    <h1>Deaths</h1> <br></br>
         <h4 style={{ fontSize: '16px', color: '#f5f5f5' }}>{deaths}</h4>
-        <span className='spanNum'>15</span>
+        <span className='spanNum'>{new Date(last).toDateString()}</span>
+        <span className='spanNum'>{new Date(last).toLocaleTimeString()}</span>
     </div>
 
 
@@ -153,9 +162,10 @@ setCountry(val)
     <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column',marginBottom:'5%' ,marginTop:'5%' }}>
 
 
-        <br></br>
-        <h4 style={{ fontSize: '16px', color: '#f5f5f5' }}></h4>
-        <span className='spanNum'>1286</span>
+    <h1>Active</h1><br></br>
+        <h4 style={{ fontSize: '16px', color: '#f5f5f5' }}>{active}</h4>
+        <span className='spanNum'>{new Date(last).toDateString()}</span>
+        <span className='spanNum'>{new Date(last).toLocaleTimeString()}</span>
 
     </div>
 
@@ -163,10 +173,6 @@ setCountry(val)
 </div>
 
 </div>
-<div>
-    {/* <input type='text' onChange={handleChange}/> */}
-    <CountryPicker/>
-    </div>
 
         </>
     )
