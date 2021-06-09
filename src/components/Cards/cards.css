@@ -1,6 +1,6 @@
 .columnFacts {
     float: left;
-    width: 20%;
+    width: 22%;
     /* padding: 20px; */
     background-color: #007ced;
     border: 2px solid;
@@ -36,7 +36,7 @@
   
   @media screen and (max-width: 992px) {
     .columnFacts {
-      width: 40%;
+      width: 45%;
       margin-top: 10%;
     }
     .row{
@@ -48,7 +48,7 @@
   
   @media screen and (max-width: 600px) {
     .columnFacts {
-      width: 80%;
+      width: 90%;
       margin-top: 10%;
     }
     .row{

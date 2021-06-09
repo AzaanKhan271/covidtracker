@@ -2,6 +2,7 @@ import './cards.css'
 import axios from 'axios'
 import { useEffect, useState } from 'react';
 import { NativeSelect, FormControl } from "@material-ui/core";
+import CountUp from "react-countup";
 
 
 
@@ -106,7 +107,7 @@ const CountryPicker = ({ handleCountryChange }) => {
     <h1>{country}</h1>
     </div>
     
-          <div className='row' style={{marginLeft:'0%'}}>
+          <div className='row' style={{marginLeft:'5%'}}>
 
     
 
@@ -116,7 +117,14 @@ const CountryPicker = ({ handleCountryChange }) => {
     <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column',marginBottom:'5%' ,marginTop:'5%' }}>
 
         <h3>Confirmed</h3>
-        <h1 style={{ fontSize: '45px', color: '#f5f5f5' }}>{infected}</h1>
+        <h1 style={{ fontSize: '45px', color: '#f5f5f5' }}>
+          {/* {infected} */}
+        <CountUp
+                  start={0}
+                  end={infected}
+                  duration={2}
+                  separator=","
+                /></h1>
         <span className='spanNum'>{new Date(last).toDateString()}</span>
         <span className='spanNum'>{new Date(last).toLocaleTimeString()}</span>
 
@@ -132,8 +140,15 @@ const CountryPicker = ({ handleCountryChange }) => {
 
     >
     <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column',marginBottom:'5%' ,marginTop:'5%' }}>
-    <h1>Recovered</h1> <br></br>
-        <h4 style={{ fontSize: '16px', color: '#f5f5f5' }}>{recovered}</h4>
+    <h3>Recovered</h3>
+        <h1 style={{ fontSize: '45px', color: '#f5f5f5' }}>
+          {/* {infected} */}
+        <CountUp
+                  start={0}
+                  end={recovered}
+                  duration={2}
+                  separator=","
+                /></h1>
         <span className='spanNum'>{new Date(last).toDateString()}</span>
         <span className='spanNum'>{new Date(last).toLocaleTimeString()}</span>
 
@@ -145,8 +160,15 @@ const CountryPicker = ({ handleCountryChange }) => {
 
     >
     <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column',marginBottom:'5%' ,marginTop:'5%'}}>
-    <h1>Deaths</h1> <br></br>
-        <h4 style={{ fontSize: '16px', color: '#f5f5f5' }}>{deaths}</h4>
+    <h3>Deaths</h3>
+        <h1 style={{ fontSize: '45px', color: '#f5f5f5' }}>
+          {/* {infected} */}
+        <CountUp
+                  start={0}
+                  end={deaths}
+                  duration={2}
+                  separator=","
+                /></h1>
         <span className='spanNum'>{new Date(last).toDateString()}</span>
         <span className='spanNum'>{new Date(last).toLocaleTimeString()}</span>
     </div>
@@ -162,8 +184,15 @@ const CountryPicker = ({ handleCountryChange }) => {
     <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column',marginBottom:'5%' ,marginTop:'5%' }}>
 
 
-    <h1>Active</h1><br></br>
-        <h4 style={{ fontSize: '16px', color: '#f5f5f5' }}>{active}</h4>
+    <h3>Active</h3>
+        <h1 style={{ fontSize: '45px', color: '#f5f5f5' }}>
+          {/* {infected} */}
+        <CountUp
+                  start={0}
+                  end={active}
+                  duration={2}
+                  separator=","
+                /></h1>
         <span className='spanNum'>{new Date(last).toDateString()}</span>
         <span className='spanNum'>{new Date(last).toLocaleTimeString()}</span>
 
