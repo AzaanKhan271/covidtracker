@@ -18,7 +18,7 @@ const App = () => {
       </div>
 
       <Cards />
-      <CountryPicker />
+      {/* <CountryPicker /> */}
 
     </>
   );
