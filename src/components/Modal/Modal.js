@@ -3,6 +3,8 @@ import './modal.css'
 
 
 const Modal = () => {
+
+    console.log('hello world')
     return(<>
 
     </>)
